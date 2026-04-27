@@ -36,9 +36,10 @@ while ($row = mysqli_fetch_assoc($result)) { $produtos[] = $row; }
             <div class="card">
                 <h3>Status do Estoque</h3>
                 <table>
-                    <tr><th>Produto</th><th>Atual</th><th>Mín.</th></tr>
+                    <tr><th>ID</th><th>Produto</th><th>Atual</th><th>Mín.</th></tr>
                     <?php foreach($produtos as $p): ?>
                     <tr>
+                        <td><?php echo $p['id']; ?></td>
                         <td><?php echo $p['nome']; ?></td>
                         <td class="<?php echo ($p['estoque_atual'] < $p['estoque_minimo']) ? 'baixo' : ''; ?>">
                             <?php echo $p['estoque_atual']; ?>

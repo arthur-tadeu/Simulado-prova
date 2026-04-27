@@ -1,0 +1,18 @@
+ENTREGA 09 – LISTA DE REQUISITOS DE INFRAESTRUTURA
+
+Item                 | Descrição do Requisito de Software/Hardware
+---------------------|--------------------------------------------------------------------------
+Sistema Operacional  | Windows 10 Pro / Windows 11 (Ambiente de Desenvolvimento)
+Linguagem            | PHP (Versão 8.2.12)
+Servidor Web         | Apache HTTP Server (Versão 2.4.58)
+SGBD                 | MySQL / MariaDB (Versão 10.4.32) - via XAMPP Control Panel
+Ambiente Local       | XAMPP v3.3.0
+Navegador            | Google Chrome / Microsoft Edge v120+
+Editor de Código     | Visual Studio Code (VS Code)
+Gerenciador de Banco | phpMyAdmin (Ferramenta de administração Web do MySQL)
+Versão do Sistema    | 1.0.0 (Release para Prova de Habilidades)
+------------------------------------------------------------------------------------------------------
+Configuração Mínima Recomendada para Implantação:
+- Processador: Intel Core i3 / AMD Ryzen 3 ou superior.
+- RAM: 4GB de Memória RAM.
+- Armazenamento: 200MB de espaço em disco para aplicação e banco de dados inicial.

@@ -1,0 +1,33 @@
+ENTREGA 01 – LISTA DE REQUISITOS FUNCIONAIS (RF)
+
+ID     REQUISITO                       DESCRIÇÃO
+------------------------------------------------------------------------------------------------------
+RF01   Autenticação de Usuário         O sistema deve possuir uma interface de login para validar usuários 
+                                       cadastrados no banco de dados saep_db.
+
+RF02   Gestão de Credenciais           O sistema deve permitir o cadastro de novos usuários, garantindo o 
+                                       acesso ao ambiente de gestão.
+
+RF03   Interface Principal             Após o login, o sistema deve exibir o nome do usuário ativo e links 
+                                       diretos para Cadastro de Produtos e Gestão de Estoque.
+
+RF04   CRUD de Produtos                O sistema deve permitir: Inserir novo produto, Listar todos os produtos 
+                                       em tabela, Editar dados e Excluir registros.
+
+RF05   Busca e Filtragem               A interface de cadastro deve possuir um campo de busca que filtre os 
+                                       produtos por nome ou especificações técnicas.
+
+RF06   Validação de Dados              O sistema deve validar se os campos obrigatórios foram preenchidos no 
+                                       cadastro/edição e exibir alertas em caso de erro.
+
+RF07   Ordenação Alfabética            A interface de gestão de estoque deve listar automaticamente todos os 
+                                       produtos em ordem alfabética (A-Z).
+
+RF08   Movimentação de Estoque         O usuário deve poder selecionar um produto e registrar uma operação 
+                                       de "Entrada" ou "Saída", informando a data da operação.
+
+RF09   Rastreabilidade de Histórico    Cada movimentação deve ser gravada vinculando o ID do produto, ID do 
+                                       usuário logado e a data/hora exata do registro.
+
+RF10   Alerta de Estoque Mínimo        Ao realizar uma movimentação de "Saída", o sistema deve verificar se o 
+                                       saldo atual é menor que o estoque mínimo e disparar um alerta visual.

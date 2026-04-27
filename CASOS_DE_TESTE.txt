@@ -1,0 +1,25 @@
+ENTREGA 08 – DESCRITIVO DE CASOS DE TESTE DE SOFTWARE
+
+PROJETO: SIstema de Gestão de Estoque GS
+AMBIENTE: Localhost (XAMPP / PHP 8.2 / MySQL)
+
+ID  | REQUISITO | CENÁRIO DE TESTE              | PROCEDIMENTOS                            | RESULTADO ESPERADO
+----|-----------|-------------------------------|------------------------------------------|----------------------------------------
+CT01| Login     | Autenticação com sucesso      | Digitar usuário 'admin' e senha '123'.   | Acesso permitido à tela Principal.
+CT02| Login     | Falha de autenticação         | Digitar usuário inexistente ou senha incorreta. | Mensagem de erro e retorno ao formulário.
+CT03| Cadastro  | Inserir produto novo          | Preencher nome, specs e estoque mínimo.  | Produto listado na tabela imediatamente.
+CT04| Cadastro  | Validação de campos vazios    | Tentar cadastrar sem preencher o nome.   | Alerta visual de preenchimento obrigatório.
+CT05| Cadastro  | Busca de produtos             | Digitar o nome de um produto na busca.   | Tabela filtrar apenas o item pesquisado.
+CT06| Edição    | Alterar dados do produto      | Clicar em Editar, mudar o valor e salvar.| Dados atualizados persistidos no banco.
+CT07| Exclusão  | Excluir produto sem vínculo   | Clicar em Excluir em produto novo.       | Produto removido da tabela com sucesso.
+CT08| Exclusão  | Integridade de Dados          | Excluir produto com movimentações.       | Sistema apaga vínculos e depois o item.
+CT09| Gestão    | Registro de Entrada           | Selecionar entrada e inserir quantidade.  | Valor somado ao "Estoque Atual".
+CT10| Gestão    | Registro de Saída             | Selecionar saída e inserir quantidade.   | Valor subtraído do "Estoque Atual".
+CT11| Alerta    | Estoque Mínimo Atingido       | Realizar saída que deixe saldo < mínimo. | Exibição de mensagem vermelha na tela.
+CT12| Alerta    | Estoque Insuficiente          | Tentar retirar mais do que há em estoque.| Bloqueio da operação com mensagem erro.
+
+------------------------------------------------------------------------------------------------------
+FERRAMENTAS DE TESTE:
+- Inspecionar Elemento (Navegador) para validar cabeçalhos HTTP.
+- phpMyAdmin para conferência de persistência nas tabelas SQL.
+- Manual Testing (Testes de Caixa Preta).
