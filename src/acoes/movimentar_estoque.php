@@ -23,14 +23,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         exit();
     }
 
-    // 3. Registra movimentação
+    // 3. Registra movimentação (ajusta data para DATETIME)
+    $data_completa = $data . " 00:00:00";
     $sql_mov = "INSERT INTO movimentacoes (produto_id, usuario_id, tipo, quantidade, data_movimentacao) 
-                VALUES ($produto_id, $usuario_id, '$tipo', $quantidade, '$data')";
-    
-    // 4. Atualiza produto
+                VALUES ($produto_id, $usuario_id, '$tipo', $quantidade, '$data_completa')";
+    mysqli_query($con, $sql_mov);
+
+    // 4. Atualiza estoque do produto
     $sql_upd = "UPDATE produtos SET estoque_atual = $novo_estoque WHERE id = $produto_id";
 
-    if(mysqli_query($con, $sql_mov) && mysqli_query($con, $sql_upd)){
+    if(mysqli_query($con, $sql_upd)){
         if($tipo == 'saida' && $novo_estoque < $produto['estoque_minimo']){
             $_SESSION['msg_estoque'] = "Alerta: O produto " . $produto['nome'] . " está abaixo do estoque mínimo!";
         } else {
